@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StoryTelling — Analysis Presentation</title>
+  <link rel="stylesheet" href="libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="libs/revealjs/dist/theme/quarto.css" id="theme">
+  <style>
+    .chart-frame { width: 100%; height: 70vh; border: none; }
+    .notes { font-size: 0.9rem; color: #444; }
+    .slide-title { font-size: 1.6rem; margin-bottom: 0.5rem; }
+  </style>
+  <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <h1>StoryTelling — Comment Analysis</h1>
+        <p class="notes">Interactive visualizations: sentiment, comment-length density, emojis, keyword network.</p>
+      <section>
+        <h2 class="slide-title">Comment Length Density</h2>
+        <div class="chart-frame">
+          <div id="8c46a102-b9f1-4c26-9b1b-6f5f2cacb8db" style="height:70vh; width:100%;"></div>
+          <script>
+            window.PLOTLYENV = window.PLOTLYENV || {};
+            if (document.getElementById("8c46a102-b9f1-4c26-9b1b-6f5f2cacb8db")) {
+              Plotly.newPlot(
+                "8c46a102-b9f1-4c26-9b1b-6f5f2cacb8db",
+                [{"name":"Density","x":[1,2,3],"y":[0.0,0.1,0.0],"mode":"lines"}],
+                {"title":{"text":"Comment Length Density"},"xaxis":{"title":{"text":"Comment length (chars)"}},"yaxis":{"title":{"text":"Density"}}},
+                {"responsive": true}
+              );
+            }
+          </script>
+        </div>
+        <p class="notes">Kernel Density Estimate for comment character lengths.</p>
+      <section>
+        <h2 class="slide-title">Top Emojis / Keywords</h2>
+        <div class="chart-frame">
+          <div id="25a51672-a2d7-4c02-8e9a-6b6c5b07576" style="height:70vh; width:100%;"></div>
+          <script>
+            window.PLOTLYENV = window.PLOTLYENV || {};
+            if (document.getElementById("25a51672-a2d7-4c02-8e9a-6b6c5b07576")) {
+              Plotly.newPlot(
+                "25a51672-a2d7-4c02-8e9a-6b6c5b07576",
+                [{"marker":{"color":"#636efa"},"x":["😀","👍","😂"],"y":[120,95,80],"type":"bar"}],
+                {"title":{"text":"Top Emojis / Keywords"},"yaxis":{"title":{"text":"Count"}}},
+                {"responsive": true}
+              );
+            }
+          </script>
+        </div>
+        <p class="notes">Top emojis or keywords extracted from comments.</p>
+      <section>
+        <h2 class="slide-title">Keyword Network</h2>
+        <div class="chart-frame">
+          <div id="722aadb0-3c4f-4a8b-9f71-1b6e9a9af2" style="height:70vh; width:100%;"></div>
+          <script>
+            window.PLOTLYENV = window.PLOTLYENV || {};
+            if (document.getElementById("722aadb0-3c4f-4a8b-9f71-1b6e9a9af2")) {
+              Plotly.newPlot(
+                "722aadb0-3c4f-4a8b-9f71-1b6e9a9af2",
+                [{"type":"scatter","mode":"markers+text","x":[0,1,2],"y":[0,1,0.5],"text":["china","korea","speed"],"marker":{"size":[40,30,20],"color":["#636efa","#EF553B","#00cc96"]}}],
+                {"title":{"text":"Keyword Network (co-occurrence)"},"showlegend":false},
+                {"responsive": true}
+              );
+            }
+          </script>
+        </div>
+        <p class="notes">Network graph showing keyword co-occurrence relationships.</p>
+      </section>
+              );
+            }
+          </script>
+        </div>
+        <p class="notes">Hover bars to see counts. Positive/Neutral/Negative breakdown from VADER.</p>
+      </section>
+
+      <section>
+        <h2 class="slide-title">Comment Length Density</h2>
+        <iframe class="chart-frame" src="../porject/data/length_density.html" title="Comment Length Density"></iframe>
+        <p class="notes">Smooth KDE-style density shows distribution of token counts per comment.</p>
+      </section>
+
+      <section>
+        <h2 class="slide-title">Top Emojis / Keywords</h2>
+        <iframe class="chart-frame" src="../porject/data/top_emojis.html" title="Top Emojis or Keywords"></iframe>
+        <p class="notes">If emojis exist, top emojis are shown; otherwise top keywords are displayed.</p>
+      </section>
+
+      <section>
+        <h2 class="slide-title">Keyword Network</h2>
+        <iframe class="chart-frame" src="../porject/data/keyword_network.html" title="Keyword Network"></iframe>
+        <p class="notes">Shows co-occurrence edges between frequently-used tokens (sliding-window co-occurrence).</p>
+      </section>
+
+      <section>
+        <h2 class="slide-title">Notes & How to Reproduce</h2>
+        <ul>
+          <li>Run the analysis: <code>python porject/NLP_PROJECT.py</code> (or add <code>--skip-fetch</code> to use existing JSON files)</li>
+          <li>Open this presentation file from the `proposal_files` folder to view embedded charts.</li>
+          <li>To adjust network thresholds or density options, edit <code>porject/NLP_PROJECT.py</code>.</li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="libs/revealjs/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      width: "100%",
+      height: "100%",
+      center: true
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+plotly>=5.0
+networkx
+scipy
+numpy
+vaderSentiment
+youtube-comment-downloader
+nltk
