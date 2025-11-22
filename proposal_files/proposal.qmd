@@ -1,0 +1,97 @@
+---
+title: "From Stereotypes to Appreciation: IShowSpeed’s China Stream"
+subtitle: "Project Extension Pitch"
+author: "Zerong Lu"
+date: "2025-10-14"
+format: 
+  revealjs:
+    theme: simple
+    transition: slide
+    slide-number: true
+    chalkboard: true
+---
+
+## Who is IShowSpeed?
+- **Darren Watkins Jr. (IShowSpeed)**: A YouTube and Twitch streamer known for high-energy, chaotic live streams.
+- **Global Reach**: Millions of fans worldwide, famous for gaming, IRL streams, and viral moments.
+- **China Stream**: A 2025 live stream exploring China, sparking diverse reactions from global audiences.
+
+::: {.callout-note}
+Speed’s vibrant streams make him a perfect lens for studying fan sentiments.
+:::
+
+## The Data: YouTube Comments
+- **Source**: Comments from IShowSpeed’s China stream video.
+- **Current**: 1,000 comments in JSON, analyzed with NLTK/VADER for sentiment.
+- **Extension**: Collect 10,000+ comments with timestamps using YouTube Data API v3.
+- **Why**: Tracks how fans’ emotions evolve as they experience China through Speed.
+
+::: {.callout-note}
+A dataset capturing a global audience’s reactions to a viral cultural moment.
+:::
+
+## Story Point: Evolving Sentiments
+- **Insight**: Comments start with stereotypes or unfamiliarity (e.g., “China’s so different!”) and shift to appreciation (e.g., “Speed showed the real China!”) as the stream progresses.
+- **Plan**: Use timestamps to analyze sentiment trends over time (e.g., 30-minute bins).
+- **Impact**: Shows how Speed’s stream reshapes fans’ views of China.
+
+::: {.callout-tip}
+A story of cultural discovery through a streamer’s lens.
+:::
+
+## Visual: Sentiment Over Time
+- **Planned**: Sentiment trends across the stream’s duration.
+
+![Temporal Sentiment Trend](visuals/temporal_mock.png){width=70%}
+
+::: {.callout-note}
+Chart will show sentiment rising as fans engage with China’s reality (mock data).
+:::
+
+## The Extension Plan
+- **Website**: Quarto/MkDocs site on GitHub Pages.
+  - Sections: Intro, Methods, Results, Slides, Appendix (code hidden for non-technical readers).
+- **Dashboard**: Streamlit app for interactive sentiment exploration.
+- **Advanced NLP**:
+  - Temporal analysis with YouTube API timestamps.
+  - BERT for nuanced sentiment (e.g., sarcasm detection).
+  - Multilingual support (English/Mandarin).
+  - Topic modeling for cultural themes.
+- **Reproducibility**: Code/data in GitHub repo.
+
+::: {.callout-note}
+An engaging story of fans’ evolving perceptions, accessible to all.
+:::
+
+## Target Achievements
+- **Data & Topic**: YouTube comments, temporal sentiment evolution.
+- **Team**: Solo (update if applicable).
+- **Repository**: Cloned at `https://github.com/LZR-ops/ishowspeed_NLP_Project`.
+  - Tested: Quarto rendering, GitHub setup.
+- **Timeline**:
+  - Oct 20: Website setup.
+  - Oct 27: Temporal analysis.
+  - Nov 3: BERT and multilingual support.
+  - Nov 10: Topic modeling and dashboard.
+  - Nov 17: Final deployment.
+- **Pitch**: Ready for MS Teams.
+
+::: {.callout-tip}
+On track to deliver a compelling data story by mid-November.
+:::
+
+## Why It Matters
+- **Story**: IShowSpeed’s stream transforms fans’ perceptions, from stereotypes to cultural appreciation.
+- **Impact**: A website and dashboard make this journey interactive and relatable.
+- **Next Steps**: Build, analyze, share the story.
+
+::: {.callout-note}
+Join us in showing how Speed’s stream united fans worldwide!
+:::
+
+## References
+- Streamlit, 2023, <https://docs.streamlit.io/>.
+- Hugging Face Transformers, 2023, <https://huggingface.co/docs/transformers/>.
+- Gensim, 2023, <https://radimrehurek.com/gensim/>.
+
+---
